@@ -30,5 +30,29 @@ $f3->route('GET /lunch', function(){
     echo $view->render('views/lunch.html');
 } );
 
+//Define a breakfast/pancakes route
+$f3->route('GET /breakfast/pancakes', function(){
+    $view = new View();
+    echo $view->render('views/pancakes.html');
+} );
+
+//Define a dinner route
+$f3->route('GET /dinner', function(){
+    $view = new View();
+    echo $view->render('views/dinner.html');
+} );
+
+//Define a dinner/stake route
+$f3->route('GET /dinner/steak', function(){
+    $view = new View();
+    echo $view->render('views/steak.html');
+} );
+
+//Define a dinner route
+$f3->route('GET /dinner/chicken', function(){
+    $view = new View();
+    echo $view->render('views/chicken.html');
+} );
+
 //run fat free framework
 $f3->run();
