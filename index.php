@@ -14,10 +14,21 @@ $f3->set('DEBUG', 3);
 
 //define a default route
 $f3->route('GET /', function(){
-   echo "<h1>Hello, World!</h1>";
-    //$view = new View;
-    //echo $view->render('views/home-page.html');
+   //echo "<h1>Hello, World!</h1>";
+    $view = new View();//add parenthesis for consistency
+    echo $view->render('views/home.html');
 });
+
+//Define a breakfast route
+$f3->route('GET /breakfast', function(){
+    $view = new View();
+    echo $view->render('views/breakfast.html');
+} );
+//Define a lunch route
+$f3->route('GET /lunch', function(){
+    $view = new View();
+    echo $view->render('views/lunch.html');
+} );
 
 //run fat free framework
 $f3->run();
