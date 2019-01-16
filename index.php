@@ -24,6 +24,7 @@ $f3->route('GET /breakfast', function(){
     $view = new View();
     echo $view->render('views/breakfast.html');
 } );
+
 //Define a lunch route
 $f3->route('GET /lunch', function(){
     $view = new View();
@@ -53,6 +54,18 @@ $f3->route('GET /dinner/chicken', function(){
     $view = new View();
     echo $view->render('views/chicken.html');
 } );
+
+//define a route with a parameter
+$f3->route('GET /@food', function($f3, $params){
+    print_r($params);
+    echo "<h3>I like ". $params['food']."</h3>";
+});
+
+//define a route with multiple parameters
+$f3->route('GET /@meal/@food', function($f3, $params){
+    print_r($params);
+    echo "<h3>I like ". $params['food']. " for ".$params['meal'].".</h3>";
+});
 
 //run fat free framework
 $f3->run();
